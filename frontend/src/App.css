@@ -1,0 +1,163 @@
+/* Define color variables for the default (light) theme */
+:root {
+  --background-color: #CFB580; /* Light French Beige */
+  --text-color: #864E3E; /* Milk Chocolate */
+  --accent-color: #CA7C4C; /* Copper Red */
+  --card-bg-color: #dcc89d;
+  --border-color: #74948C; /* Dolphin Gray */
+  --secondary-text: #578088; /* Steel Teal */
+  --button-text-color: #ffffff;
+}
+
+/* Define color variables for the dark theme */
+[data-theme='dark'] {
+  --background-color: #1a1a1a; /* Very Dark Grey/Almost Black */
+  --text-color: #CFB580; /* Light French Beige */
+  --accent-color: #CA7C4C; /* Copper Red */
+  --card-bg-color: #864E3E; /* Milk Chocolate */
+  --border-color: #578088; /* Steel Teal - now used as a border for contrast */
+  --secondary-text: #E0E0E0; /* Lighter secondary text for dark background */
+  --button-text-color: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 3rem;
+  color: var(--text-color);
+}
+
+.note-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.note-form input,
+.note-form textarea {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--card-bg-color);
+  color: var(--text-color);
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.note-form input::placeholder,
+.note-form textarea::placeholder {
+  color: var(--secondary-text);
+}
+
+.note-form button {
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--accent-color);
+  color: var(--button-text-color);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.note-form button:hover {
+  opacity: 0.9;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.note-card {
+  background-color: var(--card-bg-color);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.note-card h2 {
+  margin-top: 0;
+  color: var(--text-color);
+}
+
+.note-card p {
+  color: var(--secondary-text);
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background-color: var(--card-bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.5rem 0.8rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.note-actions {
+  margin-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
+}
+
+.note-actions button {
+  background-color: transparent;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.summary-container {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: var(--background-color);
+  border-radius: 8px;
+}
+
+.summary-container p {
+  margin: 0;
+  color: var(--secondary-text);
+  font-style: italic;
+}
+
+.logout-button {
+  position: absolute;
+  top: 2rem;
+  left: 2rem; /* Position on the left */
+  background-color: var(--card-bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.5rem 0.8rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--text-color);
+}
